@@ -1,3 +1,8 @@
+<!-- =========================================================================
+     INTERACTIVE WIDGET: MOCKUMENTARY "STYLE LAB" (ENHANCED & DRAMATIC VISUALS)
+     Designed for Canvas LMS Integration (Introductory Film Appreciation)
+     ========================================================================= -->
+
 <div class="film-app-module-container" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 850px; margin: 30px auto; padding: 25px; background: #fdfdfd; border: 1px solid #e1e4e8; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); color: #24292e;">
 
   <div class="widget-box" style="padding: 25px; background: #ffffff; border: 1px solid #d1d5db; border-radius: 6px;">
@@ -14,7 +19,7 @@
     </div>
 
     <p style="font-size: 14px; color: #586069; line-height: 1.5; margin-bottom: 20px;">
-      You are directing a scene set in a mundane office breakroom. An actor is about to deliver a ridiculous line about a stolen stapler. Your goal is to assemble the correct camera, setting, and editing techniques to make this obviously fake moment feel like an authentic, spontaneous documentary reality. <strong>Click the elements below that are crucial to achieving a Mockumentary look.</strong>
+      You are directing a scene set in a mundane office breakroom. An actor is about to deliver a ridiculous line about a stolen stapler. Assemble the correct camera, setting, and editing techniques below to transform standard fiction into an authentic, spontaneous mockumentary.
     </p>
 
     <!-- LAB CONTAINER: CHOICES & PREVIEW -->
@@ -50,62 +55,67 @@
       </div>
 
       <!-- PREVIEW MONITOR (Right) -->
-      <div style="flex: 2; min-width: 350px; border: 5px solid #24292e; border-radius: 8px; background: black; overflow: hidden; position: relative; aspect-ratio: 16/9; box-shadow: inset 0 0 20px rgba(0,0,0,0.5);">
+      <div id="msl-monitor-box" style="flex: 2; min-width: 350px; border: 5px solid #24292e; border-radius: 8px; background: #111; overflow: hidden; position: relative; aspect-ratio: 16/9; box-shadow: inset 0 0 25px rgba(0,0,0,0.8); transition: filter 0.4s ease, border-color 0.4s ease;">
         
-        <!-- Base Graphic (Boring Office Breakroom Scene) -->
-        <div id="msl-scene-base" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center; transition: opacity 0.5s ease;"></div>
+        <!-- Base Graphic (Standard Observational Breakroom Scene) -->
+        <div id="msl-scene-base" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center; transition: opacity 0.5s ease;"></div>
 
         <!-- Interview Graphic Overlay (Appears when Choice 3 is active) -->
-        <div id="msl-scene-interview" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0; transition: opacity 0.5s ease;"></div>
+        <div id="msl-scene-interview" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0; transition: opacity 0.5s ease;"></div>
+
+        <!-- Hollywood Lighting Overlay (Appears when Choice 1 is active - warm glamorous studio glow) -->
+        <div id="msl-overlay-lighting" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,220,150,0.4) 0%, rgba(200,100,50,0.2) 80%); mix-blend-mode: overlay; opacity: 0; transition: opacity 0.4s ease; pointer-events: none;"></div>
 
         <!-- Effects Overlay (Shaky Cam animation layer) -->
-        <div id="msl-effect-shaky" style="position: absolute; top: -10px; left: -10px; width: calc(100% + 20px); height: calc(100% + 20px); background: transparent; pointer-events: none; animation: none;"></div>
+        <div id="msl-effect-shaky" style="position: absolute; top: -15px; left: -15px; width: calc(100% + 30px); height: calc(100% + 30px); background: transparent; pointer-events: none; animation: none;"></div>
 
-        <!-- Text Overlay (Dialogue/Tone layer) -->
-        <div id="msl-effect-tone" style="position: absolute; bottom: 20px; left: 20px; color: white; font-family: 'Courier New', Courier, monospace; font-size: 16px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); opacity: 0; transition: opacity 0.3s ease; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 4px;"></div>
+        <!-- Text Overlay (Dialogue / Performative Contradiction) -->
+        <div id="msl-effect-tone" style="position: absolute; bottom: 20px; left: 20px; right: 20px; color: #fff; font-family: 'Courier New', Courier, monospace; font-size: 15px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.9); opacity: 0; transition: opacity 0.3s ease; background: rgba(0,0,0,0.75); padding: 8px 12px; border-left: 4px solid #6f42c1; border-radius: 4px;"></div>
 
-        <!-- On-Air Rec Light -->
-        <div id="msl-rec-light" style="position: absolute; top: 10px; right: 10px; width: 15px; height: 15px; background-color: #ff4d4d; border-radius: 50%; opacity: 0; transition: opacity 0.3s ease; box-shadow: 0 0 10px #ff4d4d;"></div>
-        <span id="msl-rec-text" style="position: absolute; top: 10px; right: 35px; color: white; font-family: sans-serif; font-size: 10px; opacity: 0; transition: opacity 0.3s ease;">REC</span>
+        <!-- On-Air Rec Light & Indicator -->
+        <div id="msl-rec-light" style="position: absolute; top: 12px; right: 12px; width: 14px; height: 14px; background-color: #ff3b30; border-radius: 50%; opacity: 0; transition: opacity 0.3s ease; box-shadow: 0 0 12px #ff3b30;"></div>
+        <span id="msl-rec-text" style="position: absolute; top: 12px; right: 34px; color: white; font-family: monospace; font-weight: bold; font-size: 11px; opacity: 0; transition: opacity 0.3s ease; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">REC</span>
         
         <!-- Completion Message -->
-        <div id="msl-success" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(111, 66, 193, 0.95); color: white; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+        <div id="msl-success" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(111, 66, 193, 0.96); color: white; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px;">
           <div style="font-size: 48px; margin-bottom: 10px;">🎉</div>
-          <h4 style="margin: 0; font-size: 20px;">Authentic Mockumentary Scene Assembled!</h4>
-          <p style="margin: 10px 0 0; font-size: 14px;">You've combined the essential tools (Handheld Cam, Confessional Interview, Performative Contradiction) to create a believable, hilarious scene. Your brain now accepts this as a real event.</p>
+          <h4 style="margin: 0 0 8px 0; font-size: 20px;">Authentic Mockumentary Scene Assembled!</h4>
+          <p style="margin: 0; font-size: 14px; line-height: 1.4;">You've successfully combined the Handheld Cam, Confessional Interview, and Performative Contradiction. Your brain now perceives this fictional office dispute as authentic reality.</p>
         </div>
       </div>
     </div>
 
     <!-- KEY TAKEAWAY BOX -->
     <div style="margin-top: 30px; background: #f1f8ff; border-left: 4px solid #6f42c1; padding: 15px; font-size: 14px; color: #24292e; line-height: 1.5;">
-      <strong>🎬 Director's Analysis:</strong> When you activate choices 2, 3, and 5, you are layering the grammar of non-fiction cinema onto a scripted performance. The cognitive dissonance created by the "unscripted" camera work tricking your brain into believing the scene is real is the secret ingredient that makes the deadpan satire so effective.
+      <strong>🎬 Director's Analysis:</strong> When you activate choices 2, 3, and 5, you strip away slick Hollywood studio artifice and replace it with imperfect documentary grammar. The unpolished framing and confessional intimacy trick the viewer into accepting the absurdity as real life.
     </div>
 
   </div>
 </div>
 
-<!-- EMBEDDED CSS FOR ANIMATIONS & JAVASCRIPT FOR GAME LOGIC -->
+<!-- EMBEDDED CSS FOR DRAMATIC CAMERA SHAKE & EFFECTS -->
 <style>
-  @keyframes camera-shake {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(3px, 3px); }
-    50% { transform: translate(-3px, 0); }
-    75% { transform: translate(0, -3px); }
-    100% { transform: translate(0, 0); }
+  @keyframes dramatic-shake {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(-6px, 4px) rotate(-0.5deg); }
+    40% { transform: translate(5px, -5px) rotate(0.8deg); }
+    60% { transform: translate(-4px, -3px) rotate(-0.3deg); }
+    80% { transform: translate(6px, 5px) rotate(0.5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
   }
   .msl-shaky-active {
-    animation: camera-shake 0.5s infinite;
+    animation: dramatic-shake 0.4s infinite ease-in-out;
   }
 </style>
 
+<!-- EMBEDDED JAVASCRIPT FOR INTERACTIVE LOGIC -->
 <script>
   const mslState = {
-    1: false, // Hollywood Lighting
-    2: false, // Handheld Cam
-    3: false, // Confessional
-    4: false, // Winking Smirk
-    5: false  // Performative Contradiction
+    1: false, // Hollywood Lighting (Anti-pattern)
+    2: false, // Handheld Cam (Correct)
+    3: false, // Confessional Interview (Correct)
+    4: false, // Breaking Character (Anti-pattern)
+    5: false  // Performative Contradiction (Correct)
   };
 
   function toggleMockElement(elemId) {
@@ -115,14 +125,14 @@
     if (mslState[elemId]) {
       btn.style.background = '#6f42c1';
       btn.style.color = 'white';
-      // Special feedback for anti-pattern
-      if (elemId === '4') {
-        btn.style.background = '#d73a49';
+      if (elemId === '1' || elemId === '4') {
+        btn.style.background = '#d73a49'; // Red highlight for incorrect/anti-patterns
         btn.style.borderColor = '#d73a49';
       }
     } else {
       btn.style.background = '#f6f8fa';
       btn.style.color = '#24292e';
+      btn.style.borderColor = '#e1e4e8';
     }
 
     updateMockPreview();
@@ -131,23 +141,21 @@
   function updateMockPreview() {
     const baseScene = document.getElementById('msl-scene-base');
     const interviewScene = document.getElementById('msl-scene-interview');
-    const shakyEffect = document.getElementById('effect-shaky'); // Should use prefix msl-effect-shaky
-    // Fix: Use correct IDs for all elements
+    const lightingOverlay = document.getElementById('msl-overlay-lighting');
     const shakyLayer = document.getElementById('msl-effect-shaky');
     const toneText = document.getElementById('msl-effect-tone');
     const recLight = document.getElementById('msl-rec-light');
     const recText = document.getElementById('msl-rec-text');
     const successMsg = document.getElementById('msl-success');
+    const monitorBox = document.getElementById('msl-monitor-box');
 
-    // Scoring logic: Correct elements are 2, 3, 5. Incorrect is 1, 4.
+    // Score Calculation
     const correctCount = (mslState['2'] ? 1 : 0) + (mslState['3'] ? 1 : 0) + (mslState['5'] ? 1 : 0);
     const incorrectCount = (mslState['1'] ? 1 : 0) + (mslState['4'] ? 1 : 0);
     const currentScore = Math.max(0, correctCount - incorrectCount);
     document.getElementById('msl-score').innerText = currentScore;
 
-    // -- VISUAL LOGIC --
-
-    // 1. Setting Logic (Choice 3: Confessional Interview Set-Up)
+    // 1. Setting Logic (Choice 3: Confessional Interview)
     if (mslState['3']) {
       interviewScene.style.opacity = '1';
       baseScene.style.opacity = '0';
@@ -160,26 +168,40 @@
       recText.style.opacity = '0';
     }
 
-    // 2. Camera Logic (Choice 2: Unstable Handheld Cam)
+    // 2. Camera Shake Logic (Choice 2: Handheld Cam)
     if (mslState['2']) {
       shakyLayer.classList.add('msl-shaky-active');
     } else {
       shakyLayer.classList.remove('msl-shaky-active');
     }
 
-    // 3. Tone Logic (Choice 5: Performative Contradiction)
-    if (mslState['5']) {
+    // 3. Lighting Logic (Choice 1: Hollywood Studio Lighting - dramatic warm glow & polished look)
+    if (mslState['1']) {
+      lightingOverlay.style.opacity = '1';
+      monitorBox.style.borderColor = '#d29200'; // Gold studio border
+    } else {
+      lightingOverlay.style.opacity = '0';
+      monitorBox.style.borderColor = '#24292e';
+    }
+
+    // 4. Tone / Dialogue Logic (Choice 5: Performative Contradiction & Choice 4: Winking Smirk)
+    if (mslState['5'] || mslState['4']) {
       toneText.style.opacity = '1';
-      if (mslState['3']) { // If in interview mode
-        toneText.innerText = '"I treat this stapler with more respect than my children."';
-      } else { // If in fly-on-the-wall mode
-        toneText.innerText = '"(Whispering) Watch this... I\'m stealing his red Swingline."';
+      if (mslState['4'] && !mslState['5']) {
+        toneText.innerText = '[ACTOR BREAKS CHARACTER]: "Wait, is the camera actually rolling right now? Lol."';
+        toneText.style.borderColor = '#d73a49';
+      } else if (mslState['3']) {
+        toneText.innerText = '"I guard my stapler with the fierce discipline of a marine sniper."';
+        toneText.style.borderColor = '#6f42c1';
+      } else {
+        toneText.innerText = '"(Observational Cut): Dwight frantically searching his desk for the missing stapler."';
+        toneText.style.borderColor = '#6f42c1';
       }
     } else {
       toneText.style.opacity = '0';
     }
-    
-    // 4. Success Condition: All correct elements are active, no incorrect ones are.
+
+    // 5. Success Condition: All 3 correct elements active, 0 incorrect elements active.
     if (correctCount === 3 && incorrectCount === 0) {
       successMsg.style.display = 'flex';
     } else {
@@ -187,5 +209,3 @@
     }
   }
 </script>
-
-```
